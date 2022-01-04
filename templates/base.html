@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Font Awsome CDN-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" 
     integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" type="text/css">
     <!-- Materialize CSS CDN -->
@@ -15,6 +16,37 @@
     <title>Task Manager</title>
 </head>
 <body>
+
+    <header>
+        <!--Code from: https://materializecss.com/navbar.html-->
+        <!--Top Navbar-->
+        <nav class="nav-extended text-shadow deep-purple lighten-1">
+            <div class="nav-wrapper">
+            <a href="{{url_for('get_tasks')}}" class="brand-logo">Task Manager</a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="{{url_for('get_tasks')}}">Home</a></li>
+                <li><a href="#">Profile</a></li>
+                <li><a href="#">New Task</a></li>
+                <li><a href="#">Manage Categories</a></li>
+                <li><a href="#">Log Out</a></li>
+                <li><a href="#">Log In</a></li>
+                <li><a href="#">Register</a></li>
+            </ul>
+            </div>
+        </nav>
+        <!--Mobile side navigation-->
+        <ul class="sidenav" id="mobile-demo">
+            <li><h4 class="center-align deep-purple-text lighten-1">Task Manager</h4></li>
+            <li><a href="{{url_for('get_tasks')}}">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">New Task</a></li>
+            <li><a href="#">Manage Categories</a></li>
+            <li><a href="#">Log Out</a></li>
+            <li><a href="#">Log In</a></li>
+            <li><a href="#">Register</a></li>
+        </ul>
+    </header>
     <h1>Task Manager</h1>
 
     {% block content %}
