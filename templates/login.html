@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h3 class="center-align">Log In</h3>
+
+<main class="container">
+  <div class="row">
+    <form class="col s12 m8 offset-m2" method="POST" action="{{ url_for('login')}}">
+      <div class="card-panel">
+          <!--username-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-cog prefix deep-purple-text text-lighten-4"></i>
+                <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                <label for="username">Username</label>
+            </div>
+        </div>
+        <!--password-->
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-lock prefix deep-purple-text text-lighten-4"></i>
+                <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                <label for="password">Password</label>
+            </div>
+        </div>
+        <!--Log In button-->
+        <div class="row">
+            <button type="submit" class="col s8 offset-s2 btn-large deep-purple lighten-1 waves-effect text-shadow center-align">
+                Log In <i class="fas fa-sign-in-alt deep-purple-text text-lighten-4"></i></button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+<!--Register Account-->
+<div class="row">
+  <div class="col s12">
+    <p class="center-align">
+      <a href="{{ url_for('register') }}" class="waves-effect waves-light deep-purple lighten-3 btn-flat text-shadow white-text">
+        Register Account</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
