@@ -8,3 +8,9 @@ $(document).ready(function(){
 $(document).ready(function(){
   $('.collapsible').collapsible();
 });
+
+/**Tooltips */
+$(document).ready(function(){
+  $('.tooltipped').tooltip();
+});
+     
