@@ -5,44 +5,44 @@
 
     <div class="card-panel">
     <div class="row">
-        <form class="col s12" method="POST" action="">
+        <form class="col s12" method="POST" action="{{ url_for('add_task') }}">
             <!-- Categories -->
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix deep-purple-text text-lighten-4"></i>
-                <select>
+                <select id="category_name" name="category_name">
                 <option value="" disabled selected>Choose Category</option>
                 {% for category in categories %}
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                 {% endfor %}
                 </select>
-                <label>Categories</label>
+                <label for="category_name">Categories</label>
             </div>
+            <!-- Task Name -->
             <div class="row">
-                <!-- Task Name -->
                 <div class="input-field col s12">
                     <i class="fas fa-pencil-alt prefix deep-purple-text text-lighten-4"></i>
                     <input id="task_name" name="task_name" minlength="2" maxlength="50" type="text" class="validate" required>
                     <label for="task_name">Task Name</label>
                 </div>
             </div>
+            <!-- Task Description -->
             <div class="row">
-                <!-- Task Description -->
                 <div class="input-field col s12">
                     <i class="fas fa-align-left prefix deep-purple-text text-lighten-4"></i>
                     <textarea id="task_description" name="task_description" minlength="5" maxlength="500" class="materialize-textarea validate" required></textarea>
                     <label for="task_description">Task Description</label>
                 </div>
             </div>
+            <!-- Due Date -->
             <div class="row">
-                <!-- Due Date -->
                 <div class="input-field col s12">
                     <i class="fas fa-calendar-alt prefix deep-purple-text text-lighten-4"></i>
                     <input id="due_date" name="due_date" type="text" class=" datepicker validate" required>
                     <label for="due_date">Due Date</label>
                 </div>
             </div>
+            <!-- Urgent Switch -->
             <div class="row">
-                <!-- Urgent Switch -->
                 <div class="input-field col s12">
                     <div class="switch">
                         <i class="fas fa-exclamation-circle prefix deep-purple-text text-lighten-4"></i>
@@ -52,6 +52,14 @@
                             Is Urgent
                         </label>
                     </div>
+                </div>
+            </div>
+            <!-- Submit Button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large deep-purple lighten-1 text-shadow">
+                        Add Task <i class="fas fa-plus"></i>
+                    </button>
                 </div>
             </div>
         </form>
