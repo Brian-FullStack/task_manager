@@ -16,6 +16,11 @@ $(document).ready(function () {
   $('.tooltipped').tooltip();
 });
 
+/**Modal Popup */
+$(document).ready(function(){
+  $('.modal').modal();
+});
+
 /** Date Picker */
 $(document).ready(function () {
   $('select').formSelect();
