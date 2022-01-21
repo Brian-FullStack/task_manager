@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <h3 class="center-align">Add Category</h3>
+
+    <div class="card-panel">
+    <div class="row">
+        <form class="col s12" method="POST" action="{{ url_for('add_categories') }}">
+            <!-- Category Name -->
+            <div class="row">
+                <div class="input-field col s12">
+                    <i class="fas fa-folder-open prefix deep-purple-text text-lighten-4"></i>
+                    <input id="category_name" name="category_name" minlength="2" maxlength="50" type="text" class="validate" required>
+                    <label for="category_name">Category Name</label>
+                </div>
+            </div>
+            <!-- Submit Button-->
+            <div class="row">
+                <div class="col s12 center-align">
+                    <button type="submit" class="btn-large deep-purple lighten-1 text-shadow">
+                        Add Task <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    
+            
+
+{% endblock %}
